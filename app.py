@@ -15,8 +15,7 @@ client = OpenAI(
 
 @app.route('/api', methods=['GET'])
 def hello_world():
-    env = os.getenv("hello")
-    return 'Hello!' + env
+    return 'Hello World!'
 
 @app.route('/api/runcode', methods=['POST'])
 def RunCode():
