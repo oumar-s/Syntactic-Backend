@@ -70,7 +70,7 @@ def GeneratePractice():
         model="gpt-3.5-turbo",
         max_tokens=500,
         messages=[
-            {"role": "assistant", "content": f"Generate 5 new JavaScript practice problems for beginners, focusing on {topic}. Each problem should be presented as a standalone statement without any preceding numbers or labels. Avoid labeling with numbers or alphabets. The problems should be unique, testing different aspects of the topic"}
+            {"role": "assistant", "content": f"Generate 5 new practice problems for beginners, focusing on {topic}. Each problem should be presented as a standalone statement without any preceding numbers or labels. Avoid labeling with numbers or alphabets. The problems should be unique, testing different aspects of the topic"}
         ]
     )
     print(jsonify(completion.choices[0].message.content))
