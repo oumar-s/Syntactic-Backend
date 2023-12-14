@@ -25,7 +25,7 @@ def RunCode():
         model="gpt-3.5-turbo",
         max_tokens=100,
         messages=[
-            {"role": "assistant", "content": f"Evaluate the javascript code below and return output only. If there a syntax error, return 'Syntax error' If there is no valid output, return 'No output.' If no code is submitted return 'No code submitted'. The code is: {code if code else 'No code submitted'}"}
+            {"role": "assistant", "content": f"Evaluate the code below and return output only. If there a syntax error, return 'Syntax error' If there is no valid output, return 'No output.' If no code is submitted return 'No code submitted'. The code is: {code if code else 'No code submitted'}"}
         ]
     )
     print(jsonify(completion.choices[0].message.content))
