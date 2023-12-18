@@ -1,21 +1,16 @@
-#create a fask app with the route /api with the method get and return hello world
 import os
 import json
 from flask import Flask, request, jsonify
 from openai import OpenAI
 from flask_cors import CORS
 from dotenv import load_dotenv
-load_dotenv()  # take environment variables from .env.
+load_dotenv()  
 
 app = Flask(__name__)
 CORS(app)
 client = OpenAI(
   api_key=os.getenv("OPENAI_API_KEY"),
 )
-
-@app.route('/api', methods=['GET'])
-def hello_world():
-    return 'Hello World!'
 
 @app.route('/api/runcode', methods=['POST'])
 def RunCode():
@@ -91,8 +86,6 @@ def Chat():
     return jsonify(completion.choices[0].message.content)
 
 
-
-#run the app
 if __name__ == '__main__':
     app.run(debug=True)
 
